@@ -19,8 +19,8 @@ function Contact() {
 			      	Berikut kontak yang dapat dihubungi terkait web developer.
 			      </p>
 			      <ul className="contact-links">
-			      	<li className="contact-item">Email: farishelmi127@gmail.com</li>
-			      	<li className="contact-item">Phone: (+62)821-1673-5990</li>
+			      	<li className="contact-item">Email: permanafarishelmi@gmail.com</li>
+			      	<li className="contact-item">Phone: (+62)831-3153-1052</li>
 			      </ul>
 		      </div>
 	      </div>

@@ -44,7 +44,7 @@ function Portfolio() {
 					<div className="portfolio-item">
 			      		<img src="/portfolio.png" className="portfolio-image" />
 
-			      		<h4 className="portfolio-name">Web App</h4>
+			      		<h4 className="portfolio-name">Static Web</h4>
 			      		<div className="portfolio-category">Website Dev</div>
 			      	</div>
 					{/* akhir box */}
@@ -52,7 +52,7 @@ function Portfolio() {
 			      	<div className="portfolio-item">
 			      		<img src="/portfolio2.png" className="portfolio-image" />
 
-			      		<h4 className="portfolio-name">Dentist Web</h4>
+			      		<h4 className="portfolio-name">Web App</h4>
 			      		<div className="portfolio-category">Website Dev</div>
 			      	</div>
 					{/* akhir box */}

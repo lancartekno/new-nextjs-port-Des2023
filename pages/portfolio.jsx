@@ -48,7 +48,7 @@ function Portfolio() {
 								<div className="portfolio-info">
 									<span className="portfolio-subtitle">AI Health Assistant</span>
 									<a href="https://drgemay.vercel.app/" target="_blank" rel="noopener noreferrer">
-										<h4 className="portfolio-name">DrGemay</h4>
+										<h4 className="portfolio-name">Drg.emay</h4>
 									</a>
 									<div className="portfolio-category">Web Application</div>
 								</div>

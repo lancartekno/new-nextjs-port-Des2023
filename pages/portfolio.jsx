@@ -28,7 +28,7 @@ function Portfolio() {
 									<a href="https://ngopiheula.vercel.app/" target="_blank" rel="noopener noreferrer">
 										<h4 className="portfolio-name">Web Cafe Ngopi Heula</h4>
 									</a>
-									<div className="portfolio-category">Website Dev</div>
+									<div className="portfolio-category">Website Cafe</div>
 								</div>
 							</div>
 
@@ -46,14 +46,24 @@ function Portfolio() {
 							<div className="portfolio-item">
 								<img src="/drgemay.png" className="portfolio-image" />
 								<div className="portfolio-info">
-									<span className="portfolio-subtitle">AI Health Assistant</span>
+									<span className="portfolio-subtitle">Static Landing Page</span>
 									<a href="https://drgemay.vercel.app/" target="_blank" rel="noopener noreferrer">
-										<h4 className="portfolio-name">Drg.emay</h4>
+										<h4 className="portfolio-name">Drg. Emay Marlina</h4>
+									</a>
+									<div className="portfolio-category">Integrasi Whatsapp</div>
+								</div>
+							</div>
+
+							<div className="portfolio-item">
+								<img src="/stempel online.png" className="portfolio-image" />
+								<div className="portfolio-info">
+									<span className="portfolio-subtitle">Digital Stamp Card</span>
+									<a href="https://ngopi-heula-poin.vercel.app/" target="_blank" rel="noopener noreferrer">
+										<h4 className="portfolio-name">Ngopi Heula Poin</h4>
 									</a>
 									<div className="portfolio-category">Web Application</div>
 								</div>
 							</div>
-
 
 
 							<div className="portfolio-item">

@@ -1,113 +1,155 @@
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
-import Head from 'next/head'
+import Head from 'next/head';
+import { motion } from 'framer-motion';
+import { ExternalLink, Layout, Smartphone, Globe } from 'lucide-react';
+
+const portfolioData = [
+	{
+		title: "Web Cafe Ngopi Heula",
+		subtitle: "Official Coffee Shop Web",
+		category: "Website Cafe",
+		image: "/ngopi heula.png",
+		url: "https://ngopiheula.vercel.app/",
+		icon: <Globe size={18} />
+	},
+	{
+		title: "Cekrekwe",
+		subtitle: "Photo Booth Service",
+		category: "Web Application",
+		image: "/cekrekwe.png",
+		url: "https://cekrekwe.vercel.app/",
+		icon: <Smartphone size={18} />
+	},
+	{
+		title: "Drg. Emay Marlina",
+		subtitle: "Static Landing Page",
+		category: "Integrasi Whatsapp",
+		image: "/drgemay.png",
+		url: "https://drgemay.vercel.app/",
+		icon: <Layout size={18} />
+	},
+	{
+		title: "Momentum",
+		subtitle: "Jasa Undangan Digital",
+		category: "Website Undangan",
+		image: "/momentum.png",
+		url: "https://momentum-invite.vercel.app/",
+		icon: <Globe size={18} />
+	},
+	{
+		title: "Undangan Momentum (30rb)",
+		subtitle: "Contoh Undangan Digital",
+		category: "Website Undangan",
+		image: "/romeo.png",
+		url: "https://undangan-digital-momentum.vercel.app/",
+		icon: <Globe size={18} />
+	},
+	{
+		title: "Ngopi Heula Poin",
+		subtitle: "Digital Stamp Card",
+		category: "Web Application",
+		image: "/stempel online.png",
+		url: "https://ngopi-heula-poin.vercel.app/",
+		icon: <Smartphone size={18} />
+	},
+	{
+		title: "Static Web",
+		subtitle: "Web Design",
+		category: "Website Dev",
+		image: "/portfolio.png",
+		url: "#",
+		icon: <Layout size={18} />
+	},
+	{
+		title: "Asmaraku Radio",
+		subtitle: "Online Radio Streamer",
+		category: "Web Application",
+		image: "/asmaraku.png",
+		url: "https://asmaraku.vercel.app/",
+		icon: <Smartphone size={18} />
+	}
+];
+
+const containerVariants = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.1
+		}
+	}
+};
+
+const itemVariants = {
+	hidden: { opacity: 0, y: 30 },
+	visible: {
+		opacity: 1,
+		y: 0,
+		transition: { duration: 0.6, ease: "easeOut" }
+	}
+};
 
 function Portfolio() {
 	return (
 		<>
 			<Head>
-				<title>Portfolio</title>
+				<title>Portfolio | Faris Helmi Permana</title>
 			</Head>
 
 			<Navbar />
 
-			<section className="hero">
+			<section className="hero" style={{ minHeight: 'auto', paddingTop: '140px' }}>
 				<div className="container">
-					<div className="text-wrapper w-full">
-						<h1 className="title">Portfolio</h1>
+					<motion.div
+						className="text-wrapper w-full"
+						initial={{ opacity: 0, y: -20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.6 }}
+					>
+						<h1 className="title">Portfolio <span>Karya</span></h1>
 						<p className="description">
-							Berikut portfolio yang pernah saya buat sebelumnya.
+							Kumpulan proyek yang telah saya kerjakan, mulai dari website statis hingga aplikasi web tingkat lanjut.
 						</p>
+					</motion.div>
+				</div>
+			</section>
 
-						<div className="portfolio-wrapper">
-
-							<div className="portfolio-item">
-								<img src="/ngopi heula.png" className="portfolio-image" />
-								<div className="portfolio-info">
-									<span className="portfolio-subtitle">Official Coffee Shop Web</span>
-									<a href="https://ngopiheula.vercel.app/" target="_blank" rel="noopener noreferrer">
-										<h4 className="portfolio-name">Web Cafe Ngopi Heula</h4>
-									</a>
-									<div className="portfolio-category">Website Cafe</div>
+			<section className="portfolio-content" style={{ marginTop: '-40px' }}>
+				<div className="container">
+					<motion.div
+						className="portfolio-wrapper"
+						variants={containerVariants}
+						initial="hidden"
+						animate="visible"
+					>
+						{portfolioData.map((item, index) => (
+							<motion.div
+								key={index}
+								className="portfolio-item"
+								variants={itemVariants}
+								whileHover={{ y: -10 }}
+							>
+								<div className="image-container">
+									<img src={item.image} className="portfolio-image" alt={item.title} />
+									<div className="portfolio-overlay">
+										<a href={item.url} target="_blank" rel="noopener noreferrer" className="cta" style={{ padding: '0.75rem 1.5rem', fontSize: '0.9rem' }}>
+											View Project
+											<ExternalLink size={16} />
+										</a>
+									</div>
 								</div>
-							</div>
-
-							<div className="portfolio-item">
-								<img src="/cekrekwe.png" className="portfolio-image" />
 								<div className="portfolio-info">
-									<span className="portfolio-subtitle">Photo Booth Service</span>
-									<a href="https://cekrekwe.vercel.app/" target="_blank" rel="noopener noreferrer">
-										<h4 className="portfolio-name">Cekrekwe</h4>
-									</a>
-									<div className="portfolio-category">Web Application</div>
+									<span className="portfolio-subtitle">{item.subtitle}</span>
+									<h4 className="portfolio-name">{item.title}</h4>
+									<div className="portfolio-category">
+										{item.icon}
+										<span>{item.category}</span>
+									</div>
 								</div>
-							</div>
-
-							<div className="portfolio-item">
-								<img src="/drgemay.png" className="portfolio-image" />
-								<div className="portfolio-info">
-									<span className="portfolio-subtitle">Static Landing Page</span>
-									<a href="https://drgemay.vercel.app/" target="_blank" rel="noopener noreferrer">
-										<h4 className="portfolio-name">Drg. Emay Marlina</h4>
-									</a>
-									<div className="portfolio-category">Integrasi Whatsapp</div>
-								</div>
-							</div>
-
-							<div className="portfolio-item">
-								<img src="/momentum.png" className="portfolio-image" />
-								<div className="portfolio-info">
-									<span className="portfolio-subtitle">Jasa Undangan Digital</span>
-									<a href="https://momentum-invite.vercel.app/" target="_blank" rel="noopener noreferrer">
-										<h4 className="portfolio-name">Momentum</h4>
-									</a>
-									<div className="portfolio-category">Website Undangan</div>
-								</div>
-							</div>
-
-							<div className="portfolio-item">
-								<img src="/romeo.png" className="portfolio-image" />
-								<div className="portfolio-info">
-									<span className="portfolio-subtitle">Contoh Undangan Digital</span>
-									<a href="https://undangan-digital-momentum.vercel.app/" target="_blank" rel="noopener noreferrer">
-										<h4 className="portfolio-name">Undangan Momentum (30rb)</h4>
-									</a>
-									<div className="portfolio-category">Website Undangan</div>
-								</div>
-							</div>
-
-							<div className="portfolio-item">
-								<img src="/stempel online.png" className="portfolio-image" />
-								<div className="portfolio-info">
-									<span className="portfolio-subtitle">Digital Stamp Card</span>
-									<a href="https://ngopi-heula-poin.vercel.app/" target="_blank" rel="noopener noreferrer">
-										<h4 className="portfolio-name">Ngopi Heula Poin</h4>
-									</a>
-									<div className="portfolio-category">Web Application</div>
-								</div>
-							</div>
-
-
-							<div className="portfolio-item">
-								<img src="/portfolio.png" className="portfolio-image" />
-								<div className="portfolio-info">
-									<span className="portfolio-subtitle">Web Design</span>
-									<h4 className="portfolio-name">Static Web</h4>
-									<div className="portfolio-category">Website Dev</div>
-								</div>
-							</div>
-
-							<div className="portfolio-item">
-								<img src="/portfolio2.png" className="portfolio-image" />
-								<div className="portfolio-info">
-									<span className="portfolio-subtitle">Application</span>
-									<h4 className="portfolio-name">Web App</h4>
-									<div className="portfolio-category">Website Dev</div>
-								</div>
-							</div>
-
-						</div>
-					</div>
+							</motion.div>
+						))}
+					</motion.div>
 				</div>
 			</section>
 		</>
